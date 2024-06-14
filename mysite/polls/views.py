@@ -23,7 +23,7 @@ def vote(request, question_id):
     try:
         choice = question.choice_set.get(id=request.POST['choice'])
     except(KeyError, Choice.DoesNotExist):
-        return render(request, 'polls/detail.html', {'error_messase': 'Fuck you', 'question': question})
+        return render(request, 'polls/detail.html', {'error_message': 'Fuck you', 'question': question})
     else:
         choice.votes += 1
         choice.save()
