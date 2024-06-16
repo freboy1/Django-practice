@@ -10,4 +10,4 @@ class QuestionModelTests(TestCase):
     def test_was_published_recently_with_future_question(self):
         time = timezone.now() + datetime.timedelta(days=31)
         future_question = Question(pub_date=time)
-        self.assertIsInstance(future_question.was_published_recently(), False)
+        self.assertIs(future_question.was_published_recently(), False)
