@@ -11,7 +11,7 @@ class QuestionAdmin(admin.ModelAdmin):
         (None, {'fields': ['question_text']}),
         ('Date information', {'fields': ['pub_date']})
     ]
-
+    list_display = ['question_text', 'pub_date']
     inlines = [ChoiceInline]
 
 
